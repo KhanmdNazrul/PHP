@@ -1,0 +1,34 @@
+# Creating view joining two table; it is only for sorting to view based on demanding field;;
+
+
+CREATE view product_list AS
+SELECT product.id, product.name AS "Product Name", product.price, manufacturer.name AS "Manufacturer Name" FROM product, manufacturer WHERE manufacturer.id = product.manufacturer_id;
+
+
+
+# trigger adjustment on MySQL:
+
+CREATE TRIGGER product_delete 
+AFTER DELETE
+ON product FOR EACH ROW
+
+INSERT INTO log_book VALUES(NULL,
+old.name, "Delete",NOW());
+
+
+
+CREATE TRIGGER product_Insert 
+AFTER INSERT
+ON product FOR EACH ROW
+
+INSERT INTO log_book VALUES(NULL,
+new.name, "Insert",NOW());
+
+
+
+CREATE TRIGGER product_Update
+AFTER UPDATE
+ON product FOR EACH ROW
+
+INSERT INTO log_book VALUES(NULL,
+old.name, "Update",NOW());

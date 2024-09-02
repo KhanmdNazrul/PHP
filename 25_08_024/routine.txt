@@ -1,0 +1,57 @@
+Setting environment for using XAMPP for Windows.
+B-22@DESKTOP-VMVSM54 c:\xampp
+# mysql -h localhost -u root -p
+Enter password:
+Welcome to the MariaDB monitor.  Commands end with ; or \g.
+Your MariaDB connection id is 94
+Server version: 10.4.27-MariaDB mariadb.org binary distribution
+
+Copyright (c) 2000, 2018, Oracle, MariaDB Corporation Ab and others.
+
+Type 'help;' or '\h' for help. Type '\c' to clear the current input statement.
+
+MariaDB [(none)]> show databases;
++--------------------+
+| Database           |
++--------------------+
+| evidence_practices |
+| information_schema |
+| mysql              |
+| performance_schema |
+| phpmyadmin         |
+| practices_purposes |
+| test               |
++--------------------+
+7 rows in set (0.000 sec)
+
+MariaDB [(none)]> use practices_purposes;
+Database changed
+MariaDB [practices_purposes]> DELIMITER //
+MariaDB [practices_purposes]> CREATE PROCEDURE get_inventory(OUT inv INT)
+    -> SELECT 45 INTO inv;
+    -> //
+Query OK, 0 rows affected (0.010 sec)
+
+MariaDB [practices_purposes]> DELIMITER ;
+MariaDB [practices_purposes]> CALL get_inventory(@inv);
+Query OK, 1 row affected (0.001 sec)
+
+MariaDB [practices_purposes]> SELECT @inv;
++------+
+| @inv |
++------+
+|   45 |
++------+
+1 row in set (0.000 sec)
+
+MariaDB [practices_purposes]>  DELIMITER //
+MariaDB [practices_purposes]> >CREATE PROCEDURE add_user(IN em VARCHAR(50), IN pass CHAR(32), in full VARCHAR(100))
+    -> INSERT INTO users (id, email, password, fullname) VALUES (NULL, em, pass, full);
+    -> //
+ERROR 1064 (42000): You have an error in your SQL syntax; check the manual that corresponds to your MariaDB server version for the right syntax to use near '>CREATE PROCEDURE add_user(IN em VARCHAR(50), IN pass CHAR(32), in full VARCH...' at line 1
+MariaDB [practices_purposes]> CREATE PROCEDURE add_user(IN em VARCHAR(50), IN pass CHAR(32), in full VARCHAR(100))
+    -> INSERT INTO users (id, email, password, fullname) VALUES (NULL, em, pass, full);
+    -> //
+Query OK, 0 rows affected (0.016 sec)
+
+MariaDB [practices_purposes]>
