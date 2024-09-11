@@ -20,7 +20,7 @@ if($sql->num_rows){
 $_SESSION['email'] =  $email;
 $_SESSION['usertype'] =  $usertype;
 //redirect
-header("Location:dashboard.php");
+header("Location:admin_dashboard.php");
 }
 
 

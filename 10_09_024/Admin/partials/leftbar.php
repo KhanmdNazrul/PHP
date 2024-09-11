@@ -7,7 +7,7 @@
                     <ul class="metismenu" id="side-menu">
                         <li class="menu-title">Menu</li>
                         <li>
-                            <a href="index.html" class="waves-effect">
+                            <a href="admin_dashboard.php" class="waves-effect">
                                 <i class="dripicons-meter"></i><span class="badge badge-info badge-pill float-right">9+</span> <span> Dashboard </span>
                             </a>
                         </li>
