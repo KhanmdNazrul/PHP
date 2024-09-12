@@ -4,7 +4,7 @@
 				<!-- SLIDE 1 -->
 				<li data-transition="slideup" data-slotamount="1" data-masterspeed="1000" data-delay="10000"  data-saveperformance="off"  data-title="Slide One">
 					<!-- MAIN IMAGE -->
-					<img src="assets/img/bg/slide4.jpg"  alt=""  data-bgposition="center center" data-bgfit="cover" data-bgrepeat="no-repeat"> 
+					<img src="../image/hospital1.jpg" width="100%"  alt=""  data-bgposition="center center" data-bgfit="cover" data-bgrepeat="no-repeat"> 
 					<!-- LAYERS -->
 					<!-- LAYER NR. 1 -->
 					<div class="tp-caption sft sfb tp-resizeme rs-parallaxlevel-10"
@@ -53,7 +53,7 @@
 				<!-- SLIDE 2 -->
 				<li data-transition="slidedown" data-slotamount="1" data-masterspeed="1000" data-delay="10000"  data-saveperformance="off"  data-title="Slide Two">
 					<!-- MAIN IMAGE -->
-					<img src="assets/img/bg/slide5.jpg"  alt=""  data-bgposition="center center" data-bgfit="cover" data-bgrepeat="no-repeat"> 
+					<img src="../image/hospital2.webp" width="100%" alt=""  data-bgposition="center center" data-bgfit="cover" data-bgrepeat="no-repeat"> 
 					<!-- LAYERS -->
 					<!-- LAYER NR. 1 -->
 					<div class="tp-caption sft sfb tp-resizeme rs-parallaxlevel-10"
