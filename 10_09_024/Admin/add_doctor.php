@@ -40,7 +40,7 @@
                                 <div class="page-title-box">
                                     <h4 class="page-title">Add Doctor</h4>
                                     <ol class="breadcrumb">
-                                        <li class="breadcrumb-item active">Welcome to Doctor Specializations</li>
+                                        <li class="breadcrumb-item active">Add Doctor</li>
                                     </ol>
                                 </div>
                             </div>

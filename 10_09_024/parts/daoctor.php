@@ -19,7 +19,7 @@
 				while($row = $sql->fetch_assoc()){?>
 					<div class="single-doctor single-doctor-warp">
 
-						<img class="img-fluid" src="doctors/<?php  echo $row['photo'] ?>" alt="" >
+						<img class="img-fluid" src="Admin/image/<?php  echo $row['photo'] ?>" alt="" >
 
 
 						<div class="single-doctor-info">
