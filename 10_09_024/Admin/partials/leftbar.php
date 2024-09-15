@@ -13,11 +13,28 @@
                         </li>
 
                         <li>
-                            <a href="javascript:void(0);" class="waves-effect"><i class="mdi mdi-doctor"></i><span> Doctors<span class="float-right menu-arrow"><i class="mdi mdi-chevron-right"></i></span> </span></a>
+                            <a href="javascript:void(0);" class="waves-effect"><i class="mdi mdi-doctor"></i><span> Admin<span class="float-right menu-arrow"><i class="mdi mdi-chevron-right"></i></span> </span></a>
                             <ul class="submenu">
-                                <li><a href="specialization.php">Specialization</a></li>
-                                <li><a href="add_doctor1.php">Add Doctor</a></li>
-                                <li><a href="manage_doctor.php">Manage Doctor</a></li>
+                                <li><a href="admin_form.php">Add Admin</a></li>
+                                <li><a href="manage_admin.php">Manage Admin</a></li>
+                            </ul>
+                        </li>
+
+                        <li>
+                            <a href="javascript:void(0);" class="waves-effect"><i class="mdi mdi-doctor"></i><span> Consultants<span class="float-right menu-arrow"><i class="mdi mdi-chevron-right"></i></span> </span></a>
+                            <ul class="submenu">
+                                <li><a href="specialization.php">Experties</a></li>
+                                <li><a href="add_consultant1.php">Add Consultant</a></li>
+                                <li><a href="manage_consultant.php">Manage Consultant</a></li>
+                            </ul>
+                        </li>
+
+                        <li>
+                            <a href="javascript:void(0);" class="waves-effect"><i class="mdi mdi-doctor"></i><span> Clients<span class="float-right menu-arrow"><i class="mdi mdi-chevron-right"></i></span> </span></a>
+                            <ul class="submenu">
+                                <li><a href="client_activities.php">Client activities</a></li>
+                                <li><a href="add_client.php">Add Client</a></li>
+                                <li><a href="manage_client.php">Manage Client</a></li>
                             </ul>
                         </li>
                     </ul>

@@ -81,6 +81,7 @@
                                     if(isset($_POST['submit'])){
                                         extract($_POST);
                                         require_once "dbconfig.php";
+                                      $details = mysqli_real_escape_string($dbf,$details); //with quotation picker of a text;
 
                                        $photo_name= $_FILES['photo']['name'];
                                        $photo_tname= $_FILES['photo']['tmp_name'];
@@ -88,7 +89,7 @@
                                        $url = $path.$photo_name;
 
                                      if( move_uploaded_file($photo_tname,$path. $photo_name)){
-                                        $dbf->query("INSERT INTO doctors(id, specilization, doctorName, address, photo, docFees, contactno, email, password) VALUES(NULL, '$specilization','$name','$address','$photo_name','$docfees','$contact','$email','$pass')");
+                                        $dbf->query("INSERT INTO doctors(id, specilization, doctorName, address, photo, docFees, contactno,details, email, password) VALUES(NULL, '$specilization','$name','$address','$photo_name','$docfees','$contact','$details','$email','$pass')");
 
                                     if($dbf->affected_rows){
                                         echo "<b style='color:green'><p>Successfully Inserted!</p></b>";
@@ -152,6 +153,12 @@
                                         </div>
 
                                         <div class="form-group">
+                                            <label>Doctor Profile</label>
+                                           <textarea name="details"  class="form-control"  required placeholder="Type something" id="details"></textarea>
+                                        </div>
+
+
+                                        <div class="form-group">
                                             <label>Password</label>
                                             <div>
                                                 <input type="password" name="pass" id="pass2" class="form-control" required placeholder="Password" />
@@ -213,7 +220,55 @@
 
     <!-- App js -->
     <script src="assets/js/app.js"></script>
+    <script src="plugins/tinymce/tinymce.min.js"></script>
 
+<script>
+    $(document).ready(function() {
+        if ($("#details").length > 0) {
+            tinymce.init({
+                selector: "textarea#details",
+                theme: "modern",
+                height: 300,
+                plugins: [
+                    "advlist autolink link image lists charmap print preview hr anchor pagebreak spellchecker",
+                    "searchreplace wordcount visualblocks visualchars code fullscreen insertdatetime media nonbreaking",
+                    "save table contextmenu directionality emoticons template paste textcolor"
+                ],
+                toolbar: "insertfile undo redo | styleselect | bold italic | alignleft aligncenter alignright alignjustify | bullist numlist outdent indent | l      ink image | print preview media fullpage | forecolor backcolor emoticons",
+                style_formats: [{
+                    title: 'Bold text',
+                    inline: 'b'
+                }, {
+                    title: 'Red text',
+                    inline: 'span',
+                    styles: {
+                        color: '#ff0000'
+                    }
+                }, {
+                    title: 'Red header',
+                    block: 'h1',
+                    styles: {
+                        color: '#ff0000'
+                    }
+                }, {
+                    title: 'Example 1',
+                    inline: 'span',
+                    classes: 'example1'
+                }, {
+                    title: 'Example 2',
+                    inline: 'span',
+                    classes: 'example2'
+                }, {
+                    title: 'Table styles'
+                }, {
+                    title: 'Table row 1',
+                    selector: 'tr',
+                    classes: 'tablerow1'
+                }]
+            });
+        }
+    });
+</script>
     <script>
         $(document).ready(function() {
             $('form').parsley();

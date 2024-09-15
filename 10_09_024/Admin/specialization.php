@@ -136,19 +136,19 @@
 
                                 <div class="row align-items-center ">
                                     <div class="col-md-12">
-                                    <div class="page-title-box">
+                                        <div class="page-title-box">
                                             <h4 class="page-title">Data Table</h4>
                                             <ol class="breadcrumb">
                                                 <li class="breadcrumb-item">
                                                     <a href="javascript:void(0);">Dashboard</a>
                                                 </li>
-                                               
+
                                                 <li class="breadcrumb-item active">Specialization</li>
                                             </ol>
                                         </div>
                                     </div>
 
-                                    
+
                                 </div>
                             </div>
                             <!-- end page-title -->
@@ -180,22 +180,23 @@
                                                     $sql = $dbf->query("SELECT * FROM doctorspecilization");
                                                     $sn = 1;
                                                     while ($row = $sql->fetch_assoc()) {
-                                                        
-                                                        ?>
+
+                                                    ?>
                                                         <tr>
                                                             <td><?php echo $sn ?></td>
-                                                            <td><?php echo $row['specilization'] ?></td>
+                                                            <td class="spname"><?php echo $row['specilization'] ?></td>
                                                             <td>
                                                                 <div class="button-items">
-                                                                    <a href="">  <input class="btn btn-success" type="submit" value="Edit"> </a>
-                                                                    <a href="">  <input class="btn btn-danger" type="submit" value="Delete"></a>
+                                                                    <a href="" data-toggle="modal" class="btn1" data-target=".specialization-modal-sm"> <input class="btn btn-success" type="submit" value="Edit"> </a>
+
+                                                                    <a href=""> <input class="btn btn-danger" type="submit" value="Delete"></a>
                                                                 </div>
-                                                           </td>
+                                                            </td>
                                                         </tr>
 
                                                     <?php
-                                                    $sn++;
-                                                 } ?>
+                                                        $sn++;
+                                                    } ?>
 
                                                 </tbody>
 
@@ -207,9 +208,37 @@
                                 <!-- end col -->
                             </div>
                             <!-- end row -->
+                            <!-- modal -->
+                            <div class="modal fade specialization-modal-sm" tabindex="-1" role="dialog" aria-labelledby="mySmallModalLabel" aria-hidden="true">
+                                <div class="modal-dialog modal-sm">
+                                    <div class="modal-content">
+                                        <div class="modal-header">
+                                            <h5 class="modal-title mt-0" id="mySmallModalLabel">Edit Specialization</h5>
+                                            <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                                                <span aria-hidden="true">&times;</span>
+                                            </button>
+                                        </div>
+                                        <div class="modal-body">
+                                          <form action="">
+                                            <div class="from-group">
+                                                <label for="">Specialization</label>
+                                                    <input type="text" class="form-control" name="" id="">
+                                                    &nbsp;
+                                                    </div>
+                                                    
+                                                    <input type="submit" class="btn btn-success" name="" value="Update" id="">
 
+                                          </form>
+                                          
 
-                            <!-- end row -->
+                                        </div>
+                                    </div>
+                                    <!-- /.modal-content -->
+                                </div>
+                                <!-- /.modal-dialog -->
+                            </div>
+                            <!-- modal end -->
+
 
                         </div>
                         <!-- container-fluid -->
@@ -245,6 +274,14 @@
 
         <!-- jQuery  -->
         <?php require_once "partials/js.php" ?>
+        <script>
+            $(document).ready(function(){
+                $("#btn1").click(function(){
+                    
+                })
+            })
+
+        </script>
 </body>
 
 </html>
